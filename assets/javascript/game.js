@@ -11,14 +11,34 @@ var userScore = 0;
 var wins = 0;
 var losses = 0;
 
-function() game () {
+function getRandomNumber() {
 
     
-        var randomNumber = Math.floor(Math.random());
+        var cry1 = 1 + Math.floor(Math.random() * 12);
         console.log(randomNumber);
-        return rando;
-    
+        return cry1;
+    }   
 
-}
+    $('#cry1').on('click', function() {
+        var myVariable = getRandomNumber();
+        console.log(myVariable);
+    });
+
+
+        // var cry2 = 1 + Math.floor(Math.random() * 12);
+        // console.log(randomNumber);
+        // return rando;
+
+        // var cry3 = 1 + Math.floor(Math.random() * 12);
+        // console.log(randomNumber);
+        // return rando;
+
+        // var cry4 = 1 + Math.floor(Math.random() * 12);
+        // console.log(randomNumber);
+        // return rando;
+
+
+
+
 
     
