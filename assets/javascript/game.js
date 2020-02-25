@@ -13,29 +13,48 @@ var startButton = [];
 // scoreboard variables
 var wins = 0;
 var losses = 0;
+$(document).ready(function() {
 
 
-
-// function to create random number for each crystal
-function getRandomNumber() {
-
-    
-        var randomNumber = 1 + Math.floor(Math.random() * 12);
-        return randomNumber;
-    }   
-// function to generate random number for user to work toward
-function generateNumber() {
+// // function to create random number for each crystal
+// function getRandomNumber() {
 
     
-        var computerRandomNumber = 19 + Math.floor(Math.random() * 120);
-        return computerRandomNumber;
-    } 
+//         var randomNumber = 1 + Math.floor(Math.random() * 12);
+//         return randomNumber;
+//     }   
+// // function to generate random number for user to work toward
+// function generateNumber() {
 
-    $('#start-button').on('click', function() {
-        var startButton = computerRandomNumber;
-        var computerRandomNumber = generateNumber();
+    
+//         var computerRandomNumber = 19 + Math.floor(Math.random() * 120);
+//         return computerRandomNumber;
+//     } 
+
+//     $('#start-button').on('click', function() {
+//         var startButton = computerRandomNumber;
+//         var computerRandomNumber = generateNumber();
+
+
+function game() {
+
+    if (userScore === computerRandomNumber) {
+    alert("You Won!");
+    wins++;
+    $("#scoreboard").html(": " + wins);
+} 
+
+if (userScore > computerRandomNumber) {
+    alert("Bummer...you lost.");
+    losses++;
+    $("#scoreboard").html(": " + losses);
+}
+} 
+
+
+game()
         $("#computer-random-number").html(computerRandomNumber);
-    });
+    // });
 
     
 
@@ -64,16 +83,5 @@ function generateNumber() {
         $('#current-score').html(userScore);
         console.log(crystalValue4);
     });
-
-if (userScore === computerRandomNumber) {
-    alert("You Won!");
-    wins++;
-    $("#scoreboard").html(" " + wins);
-} 
-
-if (userScore >= computerRandomNumber) {
-    alert("Bummer...you lost.");
-    losses++;
-    $("#scoreboard").html(" " + losses);
-}
-    
+});
+  
