@@ -15,73 +15,74 @@ var wins = 0;
 var losses = 0;
 $(document).ready(function() {
 
-
-// // function to create random number for each crystal
-// function getRandomNumber() {
-
-    
-//         var randomNumber = 1 + Math.floor(Math.random() * 12);
-//         return randomNumber;
-//     }   
-// // function to generate random number for user to work toward
-// function generateNumber() {
-
-    
-//         var computerRandomNumber = 19 + Math.floor(Math.random() * 120);
-//         return computerRandomNumber;
-//     } 
-
-//     $('#start-button').on('click', function() {
-//         var startButton = computerRandomNumber;
-//         var computerRandomNumber = generateNumber();
-
-
-function game() {
-
-    if (userScore === computerRandomNumber) {
-    alert("You Won!");
-    wins++;
-    $("#scoreboard").html(": " + wins);
-} 
-
-if (userScore > computerRandomNumber) {
-    alert("Bummer...you lost.");
-    losses++;
-    $("#scoreboard").html(": " + losses);
+function win() {
+    alert("you won!");
+    wins++
+    $('#scoreboard-wins').html(wins);
+    reset();
 }
-} 
+
+function lose() {
+    alert("bummer, you lost.");
+    losses++
+    $('#scoreboard-losses').html(losses);
+    reset();
+}
 
 
-game()
-        $("#computer-random-number").html(computerRandomNumber);
-    // });
 
+
+// Main function to start and run the game
+
+$("#computer-random-number").html(computerRandomNumber);
     
-
+function game() {
+    if(userScore == computerRandomNumber){
+        win();
+        reset();
+    } else if (userScore > computerRandomNumber){
+        lose();
+        reset();
+    }
+}
     
-    
+// Increase the user score every time a crystal button is clicked
     $('#cry1').on('click', function() {
         userScore += crystalValue1;
         $('#current-score').html(userScore);
         console.log(crystalValue1);
+        game();
     });
 
     $('#cry2').on('click', function() {
         userScore += crystalValue2;
         $('#current-score').html(userScore);
         console.log(crystalValue2);
+        game();
     });
 
     $('#cry3').on('click', function() {
         userScore += crystalValue3;
         $('#current-score').html(userScore);
         console.log(crystalValue3);
+        game();
     });
 
     $('#cry4').on('click', function() {
         userScore += crystalValue4;
         $('#current-score').html(userScore);
         console.log(crystalValue4);
+        game();
     });
+
+    function reset() {
+        computerRandomNumber = 19 + Math.floor(Math.random() * 120);
+        $("#computer-random-number").html(computerRandomNumber);
+        crystalValue1 = 1 + Math.floor(Math.random() * 12);
+        crystalValue2 = 1 + Math.floor(Math.random() * 12);
+        crystalValue3 = 1 + Math.floor(Math.random() * 12);
+        crystalValue4 = 1 + Math.floor(Math.random() * 12);
+        userScore = 0;
+        $('#current-score').html(userScore);
+    }
 });
-  
