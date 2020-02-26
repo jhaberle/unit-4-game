@@ -4,10 +4,8 @@ var crystalValue1 = 1 + Math.floor(Math.random() * 12);
 var crystalValue2 = 1 + Math.floor(Math.random() * 12);
 var crystalValue3 = 1 + Math.floor(Math.random() * 12);
 var crystalValue4 = 1 + Math.floor(Math.random() * 12);
-var randomNumber = [];
 var userScore = 0;
-var myVariable = [];
-var startButton = [];
+
 
 
 // scoreboard variables
@@ -18,14 +16,14 @@ $(document).ready(function() {
 function win() {
     alert("you won!");
     wins++
-    $('#scoreboard-wins').html(wins);
+    $('#scoreboard-wins').html("Wins: " + wins);
     reset();
 }
 
 function lose() {
     alert("bummer, you lost.");
     losses++
-    $('#scoreboard-losses').html(losses);
+    $('#scoreboard-losses').html("Losses: " + losses);
     reset();
 }
 
