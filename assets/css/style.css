@@ -1,0 +1,42 @@
+
+/* font for the entire page */
+html {
+    font-family: 'Gochi Hand';  
+}
+
+body, .jumbotron {
+    background-color: plum;
+    color:navy;
+}
+
+h1 {
+    text-align: center;
+}
+
+.card-body, .card, .list-group-item, .card-header {
+    background-color: lime;
+    font-size: 30px;
+    
+}
+
+#cry1, #cry2, #cry3, #cry4 {
+    margin-bottom: 30px;
+}
+
+/* button background colors */
+#cry1 {
+    background-color: lime;
+}
+
+#cry2{
+    background-color: blue;
+    
+}
+
+#cry3{
+    background-color: purple;
+}
+
+#cry4 {
+    background-color: red;
+}
