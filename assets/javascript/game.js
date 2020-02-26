@@ -73,6 +73,7 @@ function game() {
         game();
     });
 
+    // game resets after a player wins or loses
     function reset() {
         computerRandomNumber = 19 + Math.floor(Math.random() * 120);
         $("#computer-random-number").html(computerRandomNumber);
